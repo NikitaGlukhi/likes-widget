@@ -1,0 +1,52 @@
+.widget {
+  &-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  &-likes-count {
+    font-family: Arial;
+    font-weight: 600;
+  }
+
+  &-btn {
+    padding: .5rem 1rem;
+    border-radius: .35rem;
+    cursor: pointer;
+
+    &-not-liked {
+      border: 1px solid green;
+      color: green;
+      background-color: transparent;
+
+      transition:
+        color .3s,
+        background-color .3s,
+        border .3s;
+
+      &:hover {
+        color: white;
+        background-color: green;
+        border: 1px solid transparent;
+      }
+    }
+
+    &-liked {
+      border: 1px solid #bb0000;
+      color: #bb0000;
+      background-color: transparent;
+      transition:
+        color .3s,
+        background-color .3s,
+        border .3s;
+
+      &:hover {
+        color: white;
+        background-color: #bb0000;
+        border: 1px solid transparent;
+      }
+    }
+  }
+}

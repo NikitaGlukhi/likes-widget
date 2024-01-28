@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Injector, Component } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
+import { WidgetComponent } from './widget/widget.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'likes-counter';
+  constructor(injector: Injector,) {
+    const element = createCustomElement(WidgetComponent, {injector});
+    customElements.define('likes-widget', element);
+  }
 }
